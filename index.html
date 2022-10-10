@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <style>
+        body{
+            background-color:black;
+            color: white;
+        }
+
+        .products-area{
+            width: 75%;
+        }
+        .price-area{
+            width: 25%;
+        }
+        .card-img-top{
+            width: 150px;
+        }
+        .product-image{
+            display: flex;
+            justify-content: center;
+        }
+        i{
+            color: orange;
+        }
+        .priceCart{
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100000;
+        }
+        tr{
+            width: 100%;
+            display: flex;
+        }
+        
+        td{
+            width: 50%;
+            display: block;
+        }
+        tr td:first-child{
+            width: 70%;
+            display: block;
+        }
+        tr td:last-child{
+            width: 30%;
+            display: block;
+        }
+    </style>
+    
+</head>
+<body>
+
+<header>
+    <h1 class="text-center">Welcome to Clothing Store</h1>
+    <p class="text-center">Happy Shopping</p>
+    <!-- input field -->
+<div class="input-group w-25 mx-auto mb-3">
+    <input id="searchtext" type="text" class="form-control" placeholder="Search by category" aria-label="Search by category" aria-describedby="Search">
+    <button class="btn btn-primary" id="searchBtn">Search</button>
+  </div>
+</header>
+
+<section class="d-flex">
+<div class="products-area">
+    <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4">
+
+
+      </div>
+</div>
+<div class="price-area">
+    <div class="card priceCart  position-fixed" style="width: 18rem;">
+        <div class="card-body text-dark">
+          <h5 class="card-title text-center">My Cart</h5>
+          <hr class="m-0 p-0">
+          <table class="table table-hover">
+
+            <tbody>
+              <tr>
+                <td>Total Product</td>
+                <td id="totalProduct">0</td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td>$ <span id="price">0</span></td>
+              </tr>
+              <tr>
+                <td>Delivery Charge: </td>
+                <td>$<span id="deliveryCharge">20</span></td>
+              </tr>
+              <tr>
+                <td>Total Tax: </td>
+                <td>$ <span id="tax">0</span></td>
+              </tr>
+              <tr>
+                <td>Total Price: </td>
+                <td>$ <span id="totalPrice">0</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-center">
+            <button onclick="purchage()" id="btn" class="btn btn-primary">Purchage</button>
+          </div>
+        </div>
+      </div>
+</div>
+</section>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-dark justify-content-center text-center" id="exampleModalLabel">Product Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="details-container" class="modal-body">
+          ...
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-primary">Add to cart</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
